@@ -85,6 +85,13 @@
             }
         }
         pToUpperCase(); // chama a funcao
+
+        function printTagPOnConsole(){
+            for (let index = 0; index < document.getElementsByTagName('p').length; index += 1) {
+                console.log(document.getElementsByTagName('p')[index].innerHTML);
+            }
+        }
+        printTagPOnConsole();
     </script>
   </body>
 </html>
