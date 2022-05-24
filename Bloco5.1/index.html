@@ -42,6 +42,7 @@
       </section>
     </main>
     <script>
+        let doc = document;
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
@@ -54,6 +55,11 @@
  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
+        function changeText(){
+            let paragrafo = document.getElementsByTagName('p')[1];
+            paragrafo.innerHTML = 'Codando muitos sites maneiros e ganhando dindin'; 
+        }
+        changeText();
     </script>
   </body>
 </html>
