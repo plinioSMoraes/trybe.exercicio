@@ -42,7 +42,6 @@
       </section>
     </main>
     <script>
-        let doc = document;
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
@@ -55,11 +54,17 @@
  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
-        function changeText(){
-            let paragrafo = document.getElementsByTagName('p')[1];
-            paragrafo.innerHTML = 'Codando muitos sites maneiros e ganhando dindin'; 
+        function changeText(){ // Exercicio 1
+            let paragrafo = document.getElementsByTagName('p')[1]; // crio uma variavel onde eu coloco o paragrafo especifico que quero mudar
+            paragrafo.innerHTML = 'Codando muitos sites maneiros e ganhando dindin'; // modifica o innerHTML do paragrafo
         }
-        changeText();
+        changeText(); // chama a funcao para modificar o paragrafo
+
+        function changeColor(){ // Exercicio 2
+            let color = document.getElementsByClassName('main-content')[0]; // puxa para color a class main content
+            color.style.background = 'rgb(76,164,109)'; // seta a cor em background para verde
+        }
+        changeColor(); // chama a funcao
     </script>
   </body>
 </html>
