@@ -77,6 +77,14 @@
             paragrafo.innerHTML = 'Exercicio 5.1 - JavaScript'; // troca o texto interno por esse
         }
         fixTitle(); // chama a function
+
+        function pToUpperCase(){ // Exercicio 5
+            for(let index = 0; index < document.getElementsByTagName('p').length; index += 1){ // percorre as tag p no html
+                let paragrafo = document.getElementsByTagName('p')[index]; // pega uma das tags
+                paragrafo.innerHTML = paragrafo.innerHTML.toUpperCase(); // seta o valor interno delas para uppercase
+            }
+        }
+        pToUpperCase(); // chama a funcao
     </script>
   </body>
 </html>
