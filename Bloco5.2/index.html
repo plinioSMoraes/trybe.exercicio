@@ -11,16 +11,74 @@
 <body>
     <main id="paiDoPai">
         <section id="pai">
-          <section id="primeiroFilho"></section>
-          <section id="elementoOndeVoceEsta">
-            <section id="primeiroFilhoDoFilho"></section>
-            <section id="segundoEUltimoFilhoDoFilho"></section>
-          </section>
-          Atenção!
-          <section id="terceiroFilho"></section>
-          <section id="quartoEUltimoFilho"></section>
+            <section id="primeiroFilho"></section>
+            <section id="elementoOndeVoceEsta">
+                <section id="primeiroFilhoDoFilho">fdsaf</section>
+                <section id="segundoEUltimoFilhoDoFilho"></section>
+            </section>
+            Atenção!
+            <section id="terceiroFilho"></section>
+            <section id="quartoEUltimoFilho"></section>
         </section>
-      </main>
-  <script src="script.js"></script>
+    </main>
+    <script>
+        // Parte 1
+        // 1.Acesse o elemento elementoOndeVoceEsta.
+            const elementoOndeEstou = document.getElementById('elementoOndeVoceEsta');
+        // 2. Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+            const elementoPai = elementoOndeEstou.parentElement;
+            elementoPai.style.background = 'yellow'
+        // 3. Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso?
+            const elementoFilhoDoFilho = elementoOndeEstou.firstElementChild;
+            elementoFilhoDoFilho.innerText = 'FilhoDoFilho';
+        // 4. Acesse o primeiroFilho a partir de pai.
+            const primeiroFilho = elementoPai.firstElementChild;
+        // 5. Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.
+            const primeiroFilho2 = elementoOndeEstou.previousElementSibling;
+        // 6. Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+            const text = elementoOndeEstou.nextSibling;
+        // 7. Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+            const thirdChild = elementoOndeEstou.nextElementSibling;
+        // 8. Agora acesse o terceiroFilho a partir de pai.
+            const thirdChild2 = elementoPai[3];
+        // Parte 2
+        // Crie um irmão para elementoOndeVoceEsta.
+            let elementoOndeEstouBrother = document.createElement('section');
+            elementoOndeEstouBrother.innerText = 'Sou irmao do elementoOndeVoceEsta'
+            // console.log(elementoOndeEstouBrother);
+            elementoPai.appendChild(elementoOndeEstouBrother);
+        // Crie um filho para elementoOndeVoceEsta.
+            let elementoOndeEstouChild = document.createElement('section');
+            elementoOndeEstouChild.innerText = 'Sou filho do elementoOndeEstou'
+            console.log(elementoOndeEstouChild)
+            elementoOndeEstou.appendChild(elementoOndeEstouChild);
+        // Crie um filho para primeiroFilhoDoFilho.
+            let filhoDoPrimeiroFilhoDoFilho = document.createElement('section');
+            filhoDoPrimeiroFilhoDoFilho.innerText = 'Sou filho do primeiro filho';
+            console.log(filhoDoPrimeiroFilhoDoFilho)
+            primeiroFilhoDoFilho.appendChild(filhoDoPrimeiroFilhoDoFilho);
+        // A partir desse filho criado, acesse terceiroFilho.
+            console.log(filhoDoPrimeiroFilhoDoFilho.parentNode.parentNode.nextSibling.nextSibling);
+        // Parte 3
+        // Remova todos os elementos filhos de paiDoPai exceto pai, 
+        //elementoOndeVoceEsta e primeiroFilhoDoFilho.
+        
+            const paiChildren = document.getElementById('pai');
+            for (let index = paiChildren.childNodes.length -1 ; index >= 0 ; index -= 1) {
+                const currentChild = paiChildren.childNodes[index];
+                if (currentChild.id !== 'elementoOndeVoceEsta') {
+                    console.log('removing: ' + currentChild + currentChild.id);
+                    currentChild.remove();
+                }
+            }
+            for(let index = elementoOndeEstou.childNodes.length -1; index >= 0; index -= 1){
+                const elementChild = elementoOndeEstou.childNodes[index];
+                if (elementChild.id !== 'primeiroFilhoDoFilho') {
+                    console.log('removing: ' + elementChild + elementChild.id);
+                    elementChild.remove();
+                }
+
+            }
+        </script>
 </body>
 </html>
