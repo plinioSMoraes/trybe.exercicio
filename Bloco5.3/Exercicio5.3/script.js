@@ -152,3 +152,26 @@ function selectTask() {
   })
 }
 selectTask();
+
+//Exercicio 10
+function taskDay(){
+  let taskDay = document.querySelector('#days');
+  let task = document.querySelector('.task');
+  let originalDayColor = 'rgb(119,119,119)';
+  let taskSelected = document.getElementsByClassName('task selected');
+  let taskDayColor = task.style.backgroundColor;
+
+  taskDay.addEventListener('click', function(originEvent){
+    let color = originEvent.target.style.color;
+    if (task.className == 'task selected') {
+      if (color == taskDayColor){
+        originEvent.target.style.color  = originalDayColor;
+      }else {
+        originEvent.target.style.color = taskDayColor;
+      }
+    } else {
+      originEvent.target.style.color = originalDayColor;
+    }
+  })
+}
+taskDay();
