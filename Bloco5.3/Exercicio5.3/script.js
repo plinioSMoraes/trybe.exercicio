@@ -47,4 +47,25 @@ function createButton(Feriados){
   divTag.appendChild(button);
 }
 createButton('Feriados');
-  // Escreva seu código abaixo.
+
+function buttonChangeColorFeriados(){
+  let button = document.querySelector('#btn-holiday'); // pega o botao
+  let holidays = document.querySelectorAll('.holiday'); // pega os feriados
+  let bgColor = 'red'; // seta uma cor pra variavel
+  let initialConfig = holidays[0].style.backgroundColor; // guarda a cor original dos botoes
+  button.addEventListener('click', function() { // funçao dentro do eventlistener
+      for (let index = 0; index < holidays.length; index += 1) { // percorre todos feriados
+        if (holidays[index].style.backgroundColor === initialConfig) { // ve se a cor é a original
+          holidays[index].style.backgroundColor = 'red'; // se for troca
+        } else {
+          holidays[index].style.backgroundColor = initialConfig; // senao for seta a original
+        }
+      }
+    }
+  )
+}
+
+buttonChangeColorFeriados();
+
+
+// Escreva seu código abaixo.
