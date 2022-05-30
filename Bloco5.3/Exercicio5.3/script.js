@@ -9,7 +9,6 @@ function createDaysOfTheWeek() {
       weekDaysList.appendChild(dayListItem);
     };
 };
-  
 createDaysOfTheWeek();
 
 //Exercicio 1
@@ -67,7 +66,6 @@ function buttonChangeColorFeriados(){
     }
   )
 }
-
 buttonChangeColorFeriados();
 
 //Exercicio 4
@@ -79,3 +77,21 @@ function fridayButton(string){ // funçao para criar o botao sexta-feiras
   buttonsContainer.appendChild(button); // adiciona o nodo como filho da div buttons container
 }
 fridayButton("Sexta-feira") // chama a funcao
+
+//Exercicio 5
+function changeTxtFridays(){ // muda o texto das fridays com o botao
+  let fridays = document.querySelectorAll('.friday'); // pega as fridays
+  let button = document.querySelector('#btn-friday'); // pega o botao
+  let fridaysArray = ['4','11','18','25']; // cria um arrayBackup
+  button.addEventListener('click', function(){ // adiciona um evento ao botao
+    for (let index = 0; index < fridays.length; index += 1) { //percorre as fridays
+      if (fridays[index].innerText === 'Sextou') { // se tiver Sextou, troca por um dia do arrayBackup
+        fridays[index].innerText = fridaysArray[index]; // troca 
+      } else {
+        fridays[index].innerHTML = 'Sextou'; // senao troca o dia por Sextou
+      }
+    }
+  }
+  )
+}
+changeTxtFridays(); // chama a funcao
