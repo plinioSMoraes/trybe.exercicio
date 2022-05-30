@@ -126,4 +126,16 @@ function addTasks(taskName){
   task.innerText = taskName;
   myTasks.appendChild(task);
 }
-// addTasks("Cozinhar");
+ addTasks("Cozinhar");
+
+//Exercicio 8
+function coloredTasks(stringColor){
+  let myTasks = document.querySelector('.my-tasks');
+  let divTag = document.createElement('div');
+  divTag.style.backgroundColor = stringColor;
+  divTag.className = 'task';
+  myTasks.appendChild(divTag);
+
+}
+coloredTasks('red')
+
