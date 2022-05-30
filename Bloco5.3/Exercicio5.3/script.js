@@ -95,3 +95,35 @@ function changeTxtFridays(){ // muda o texto das fridays com o botao
   )
 }
 changeTxtFridays(); // chama a funcao
+
+//Exercicio 6
+function daysZoomIn(){
+  let days = document.querySelector('#days');
+  days.addEventListener('mouseover', function(originEvent){
+    originEvent.target.style.fontSize = '30px';
+    originEvent.target.style.fontWeight = '600';
+
+  }
+  )
+}
+// daysZoomIn();
+
+function daysZoomOut(){
+  let days = document.querySelector('#days');
+  days.addEventListener('mouseout', function(originEvent){
+    originEvent.target.style.fontSize = '20px';
+    originEvent.target.style.fontWeight = '200';
+
+  }
+  )
+}
+// daysZoomOut();
+
+//Exercicio 7
+function addTasks(taskName){
+  let myTasks = document.querySelector('.my-tasks');
+  let task = document.createElement('span');
+  task.innerText = taskName;
+  myTasks.appendChild(task);
+}
+// addTasks("Cozinhar");
