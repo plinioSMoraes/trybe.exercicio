@@ -139,3 +139,16 @@ function coloredTasks(stringColor){
 }
 coloredTasks('red')
 
+//Exercicio 9
+function selectTask() {
+  let task = document.querySelector('.task');
+  task.addEventListener('click', function(originEvent){
+    if (originEvent.target.className == 'task selected') {
+      originEvent.target.className = 'task';
+    } else {
+      originEvent.target.className = 'task selected';
+    }
+
+  })
+}
+selectTask();
