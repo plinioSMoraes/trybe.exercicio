@@ -11,7 +11,8 @@ function createDaysOfTheWeek() {
 };
   
 createDaysOfTheWeek();
-  
+
+//Exercicio 1
 function createDaysOfTheMonth() {
   const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 
     15, 16, 17, 18, 19, 20, 21, 22, 23, 
@@ -39,6 +40,7 @@ function createDaysOfTheMonth() {
 }
 createDaysOfTheMonth();
 
+//Exercicio 2
 function createButton(Feriados){
   let divTag = document.querySelector('.buttons-container');
   let button = document.createElement('button');
@@ -48,6 +50,7 @@ function createButton(Feriados){
 }
 createButton('Feriados');
 
+//Exercicio 3
 function buttonChangeColorFeriados(){
   let button = document.querySelector('#btn-holiday'); // pega o botao
   let holidays = document.querySelectorAll('.holiday'); // pega os feriados
@@ -67,5 +70,12 @@ function buttonChangeColorFeriados(){
 
 buttonChangeColorFeriados();
 
-
-// Escreva seu código abaixo.
+//Exercicio 4
+function fridayButton(string){ // funçao para criar o botao sexta-feiras
+  let button = document.createElement('button'); // cria o elemento button
+  let buttonsContainer = document.querySelector('.buttons-container'); // pega o container de botao
+  button.id = 'btn-friday'; // adiciona a id btn friday para o elemento button
+  button.innerHTML = string; // adiciona um texto interno ao botao
+  buttonsContainer.appendChild(button); // adiciona o nodo como filho da div buttons container
+}
+fridayButton("Sexta-feira") // chama a funcao
