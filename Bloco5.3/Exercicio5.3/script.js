@@ -175,3 +175,37 @@ function taskDay(){
   })
 }
 taskDay();
+
+//Exercicio 11 - Bonus
+function addCompromise(){
+  let inputButton = document.querySelector('#btn-add');
+  let inputTask = document.querySelector('#task-input');
+  let tasksMenu = document.querySelector('.my-tasks');
+  
+  inputButton.addEventListener('click', function(){
+    let breakRow = document.createElement('br');
+
+    if (inputTask.value === ''){
+      alert('Erro ao adicionar mensagem');
+    }else {
+      tasksMenu.appendChild(breakRow);
+      addTasks(inputTask.value);
+      coloredTasks('green');
+      inputTask.value = '';
+    }
+  });
+  inputTask.addEventListener('keypress', function(originEvent){
+    let breakRow = document.createElement('br');
+    if ( originEvent.key === 'Enter'){
+      if (inputTask.value === ''){
+        alert('Erro ao adicionar mensagem');
+      }else {
+        tasksMenu.appendChild(breakRow);
+        addTasks(inputTask.value);
+        inputTask.value = '';
+        coloredTasks('blue');
+      }
+    }
+  });
+}
+addCompromise();
