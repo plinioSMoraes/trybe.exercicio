@@ -1,23 +1,32 @@
-const eraseButton = document.querySelector('.btn .btn-success');
-const sendButton = document.querySelectorAll('.btn .btn-danger');
 
-eraseButton.addEventListener('click', function (originEvent) {
-    let name = document.querySelector('.name');
-    let email = document.querySelector('.email');
-    let reason = document.querySelector('#reason');
-    let destination = document.querySelector('.destination');
-    let data = document.querySelector('.data');
-    let shareImg = document.querySelector('#shareImg');
-    let receiveInfo = document.querySelector('#receiveInfo');
+var picker = new Pikaday(
+    {
+        field: document.getElementById('datepicker'),
+        firstDay: 1,
+        minDate: new Date(),
+        maxDate: new Date(2020, 12, 31),
+        yearRange: [2000,2020]
+    });
+    
 
-    originEvent.preventDefault();
-    email.value = '';
-    name.value = '';
-    reason.value = '';
-    destination.click(); // seleciona a primeira opçao
-    destination.checked = false; // e limpa a primeira opçao
-    data.value = '';
-    shareImg.checked = false;
-    receiveInfo.checked = false;
-})
+//
+// Custom Class Validation Example
+//
+validation.init("form");
+var enabled = false;
+validation.addClassValidation("#customClassValidation", ".my-class-invalid", "Field is invalid");
+document.getElementById("customClassValidation").addEventListener("click", function(e){
+    if (enabled){
+    e.target.className = e.target.className.replace(/my-class-invalid$/, "");
+    } else {
+    e.target.className += " my-class-invalid";
+    }
+    enabled = !enabled;
+});
 
+//
+// Manual Validation Example
+//
+document.getElementById("manualValidation").addEventListener("click", function(e) {
+    validation.show("#manualValidation", "My custom message");
+});

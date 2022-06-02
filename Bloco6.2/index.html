@@ -6,80 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="pikaday.css">
+    <link href="validation.min.css" rel="stylesheet">
+
 
     <title>Forms</title>
 </head>
 <body class="container">
     <h1 id="header">Formulario</h1>
-    <form action="" method="GET" enctype="multipart/form-data">
+    <form action="#" id="form" method="GET" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="form-label" for="name">Nome Completo:</label>
-                <input class="form-control" type="name" maxlength="40" minlength="10" required placeholder="Digite seu nome...">
+                <input class="form-control validate" type="name" maxlength="40" minlength="10" data-validate="required"  placeholder="Digite seu nome...">
                 <br>
 
-                <label class="form-label" for="email">E-mail:</label>
-                <input class="form-control" type="email"  minlength="10" maxlength="50" required placeholder="Digite seu e-mail...">
+                <label class="form-label" for="email" >E-mail:</label>
+                <input class="form-control validate" type="email"  minlength="10" maxlength="50" data-validate="required" placeholder="Digite seu e-mail...">
                 <br>
 
                 <label class="form-check-inline" for="radio">Destino Preferido: </label>
                 <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" id="Cidade" name="destination" value="Cidade" class="destination">
+                    <input class="form-check-input validate destination" type="radio" id="Cidade" name="destination" data-validate = "required" value="Cidade">
                     <label class="form-check-label" for="Cidade">Cidade</label>
                 </div>
 
                 <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" id="Campo" name="destination" value="Campo" class="destination">
+                    <input class="form-check-input destination" type="radio" id="Campo" name="destination" value="Campo" >
                     <label class="form-check-label" for="Campo">Campo</label>
                 </div>
 
                 <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" id="Praia" name="destination" value="Praia" class="destination">
+                    <input class="form-check-input destination" type="radio" id="Praia" name="destination" value="Praia" >
                     <label class="form-check-label" for="Praia">Praia</label>
                 </div>
 
                 <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" id="Montanhas" name="destination" value="Montanhas" class="destination">
+                    <input class="form-check-input destination" type="radio" id="Montanhas" name="destination" value="Montanhas" >
                     <label class="form-check-label" for="Montanhas">Montanhas</label>
                 </div>
                 <br>
 
-                <label for="reason" class="reason">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label><br>
-                <textarea name="reason" class="form-control" id="reason" rows="5" placeholder="Sua resposta!" maxlength="500"
+                <label for="reason" class="reason" >Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label><br>
+                <textarea name="reason" class="form-control validate" data-validate="required" id="reason" rows="5" placeholder="Sua resposta!" maxlength="500"
                 spellcheck="default" minlength="50"></textarea>
                 <br>
 
                 <label for="datepicker">Qual a melhor data para realizar sua viagem?</label>
-                <input type="text" id="datepicker" placeholder="DD/MM/YYYY">
+                <input class="validate" data-validate="required" type="text" id="datepicker" placeholder="DD/MM/YYYY" autocomplete="off">
                 <!-- <input type="text" class = "form-control" class="data" maxlength="8" minlength="8" placeholder="dd/mm/aa"> -->
                 <br>
+
                 <div class="form-check-inline">
                     <label class="form-check-label" for="receiveInfo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
-                    <input class="form-check-input" type="checkbox" name="" id="receiveInfo">
+                    <input class="form-check-input validate" data-validate="required" type="checkbox" name="" id="receiveInfo">
                 </div>
                 <br>
                 <div class="form-check-inline">
                     <label class="form-check-label" for="shareImg">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
-                    <input class="form-check-input" type="checkbox" name="" id="shareImg">
+                    <input class="form-check-input validate" data-validate="required" type="checkbox" name="" id="shareImg">
                 </div>
                 <br>
 
             </div>
             <div class="buttons-container">
-                <button class="btn btn-success">Enviar</button>
+                <button class="btn btn-success" id="submit">Enviar</button>
                 <button class="btn btn-danger">Apagar</button>
             </div>
 
     </form>
     <script src="pikaday.js"></script>
-    <script> 
-        var picker = new Pikaday(
-    {
-        field: document.getElementById('datepicker'),
-        firstDay: 1,
-        minDate: new Date(),
-        maxDate: new Date(2020, 12, 31),
-        yearRange: [2000,2020]
-    });    
-    </script>
+    <script src="validation.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
