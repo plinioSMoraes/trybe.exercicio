@@ -20,3 +20,4 @@ eraseButton.addEventListener('click', function (originEvent) {
     shareImg.checked = false;
     receiveInfo.checked = false;
 })
+

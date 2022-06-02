@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="pikaday.css">
+
     <title>Forms</title>
 </head>
 <body class="container">
@@ -46,8 +48,9 @@
                 spellcheck="default" minlength="50"></textarea>
                 <br>
 
-                <label for="data">Qual a melhor data para realizar sua viagem? </label>
-                <input type="text" class = "form-control" class="data" maxlength="8" minlength="8" placeholder="dd/mm/aa">
+                <label for="datepicker">Qual a melhor data para realizar sua viagem?</label>
+                <input type="text" id="datepicker" placeholder="DD/MM/YYYY">
+                <!-- <input type="text" class = "form-control" class="data" maxlength="8" minlength="8" placeholder="dd/mm/aa"> -->
                 <br>
                 <div class="form-check-inline">
                     <label class="form-check-label" for="receiveInfo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
@@ -67,6 +70,16 @@
             </div>
 
     </form>
-    <script src="script.js"></script>
+    <script src="pikaday.js"></script>
+    <script> 
+        var picker = new Pikaday(
+    {
+        field: document.getElementById('datepicker'),
+        firstDay: 1,
+        minDate: new Date(),
+        maxDate: new Date(2020, 12, 31),
+        yearRange: [2000,2020]
+    });    
+    </script>
 </body>
 </html>
