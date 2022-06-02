@@ -1,5 +1,5 @@
-const eraseButton = document.querySelector('.eraseButton');
-const sendButton = document.querySelectorAll('.sendButton');
+const eraseButton = document.querySelector('.btn .btn-success');
+const sendButton = document.querySelectorAll('.btn .btn-danger');
 
 eraseButton.addEventListener('click', function (originEvent) {
     let name = document.querySelector('.name');
@@ -11,7 +11,6 @@ eraseButton.addEventListener('click', function (originEvent) {
     let receiveInfo = document.querySelector('#receiveInfo');
 
     originEvent.preventDefault();
-
     email.value = '';
     name.value = '';
     reason.value = '';

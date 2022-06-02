@@ -4,40 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
     <title>Forms</title>
 </head>
-<body>
-    <header id="header">Formulario</header>
+<body class="container">
+    <h1 id="header">Formulario</h1>
     <form action="" method="GET" enctype="multipart/form-data">
-            <div class="forms-body">
-                <label for="name">Nome Completo:</label>
-                <input type="text" class="name" maxlength="40" minlength="10" required placeholder="Digite seu nome..."><br>
-                <label for="email">E-mail:</label>
-                <input type="text" class="email" minlength="10" maxlength="50" required placeholder="Digite seu e-mail..."><br>
-                <label for="radio">Destino Preferido: </label>
-                <input type="radio" id="Cidade" name="destination" value="Cidade" class="destination">
-                <label for="Cidade">Cidade</label>
-                <input type="radio" id="Campo" name="destination" value="Campo" class="destination">
-                <label for="Campo">Campo</label>
-                <input type="radio" id="Praia" name="destination" value="Praia" class="destination">
-                <label for="Praia">Praia</label>
-                <input type="radio" id="Montanhas" name="destination" value="Montanhas" class="destination">
-                <label for="Montanhas">Montanhas</label><br>
+            <div class="form-group">
+                <label class="form-label" for="name">Nome Completo:</label>
+                <input class="form-control" type="name" maxlength="40" minlength="10" required placeholder="Digite seu nome...">
+                <br>
+
+                <label class="form-label" for="email">E-mail:</label>
+                <input class="form-control" type="email"  minlength="10" maxlength="50" required placeholder="Digite seu e-mail...">
+                <br>
+
+                <label class="form-check-inline" for="radio">Destino Preferido: </label>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" id="Cidade" name="destination" value="Cidade" class="destination">
+                    <label class="form-check-label" for="Cidade">Cidade</label>
+                </div>
+
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" id="Campo" name="destination" value="Campo" class="destination">
+                    <label class="form-check-label" for="Campo">Campo</label>
+                </div>
+
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" id="Praia" name="destination" value="Praia" class="destination">
+                    <label class="form-check-label" for="Praia">Praia</label>
+                </div>
+
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" id="Montanhas" name="destination" value="Montanhas" class="destination">
+                    <label class="form-check-label" for="Montanhas">Montanhas</label>
+                </div>
+                <br>
+
                 <label for="reason" class="reason">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label><br>
-                <textarea name="reason" id="reason" cols="60" rows="10" placeholder="Sua resposta!" maxlength="500"
-                spellcheck="default" minlength="50"></textarea><br>
+                <textarea name="reason" class="form-control" id="reason" rows="5" placeholder="Sua resposta!" maxlength="500"
+                spellcheck="default" minlength="50"></textarea>
+                <br>
+
                 <label for="data">Qual a melhor data para realizar sua viagem? </label>
-                <input type="text" class="data" maxlength="8" minlength="8" placeholder="dd/mm/aa"><br>
-                <label for="receiveInfo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
-                <input type="checkbox" name="" id="receiveInfo"><br>
-                <label for="shareImg">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
-                <input type="checkbox" name="" id="shareImg"><br>
+                <input type="text" class = "form-control" class="data" maxlength="8" minlength="8" placeholder="dd/mm/aa">
+                <br>
+                <div class="form-check-inline">
+                    <label class="form-check-label" for="receiveInfo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+                    <input class="form-check-input" type="checkbox" name="" id="receiveInfo">
+                </div>
+                <br>
+                <div class="form-check-inline">
+                    <label class="form-check-label" for="shareImg">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+                    <input class="form-check-input" type="checkbox" name="" id="shareImg">
+                </div>
+                <br>
 
             </div>
             <div class="buttons-container">
-                <button class="sendButton">Enviar</button>
-                <button class="eraseButton">Apagar</button>
+                <button class="btn btn-success">Enviar</button>
+                <button class="btn btn-danger">Apagar</button>
             </div>
 
     </form>
