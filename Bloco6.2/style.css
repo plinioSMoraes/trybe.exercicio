@@ -1,0 +1,58 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(238, 204, 153);
+  }
+  
+  #header{
+    margin-left: 300px;
+    width: 75px;
+  }
+  
+  .forms-body {
+    clear: both;
+    float: left;
+    width: auto;
+    height: auto;
+    background-color: rgb(126, 218, 247);
+    border: 2px solid black;
+    padding: 5px;
+  }
+  
+  .sendButton {
+    clear: both;
+    float: left;
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 150px;
+    height: 30px;
+  
+  }
+  .eraseButton {
+    float: left;
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 30px;
+    height: px;
+    margin-top: 10px;
+    margin-left: 20px;
+    /* padding: 10px; */
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+  
+  .email{
+      margin-left: 62.7px;
+      margin-top: 5px;
+  }
+  
+  .destination{
+      margin-top: 15px;
+  }
+  .reason{
+      margin-top: 50px;
+  }
