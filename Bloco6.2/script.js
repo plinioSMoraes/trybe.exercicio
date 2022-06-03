@@ -27,6 +27,13 @@ document.getElementById("customClassValidation").addEventListener("click", funct
 //
 // Manual Validation Example
 //
-document.getElementById("manualValidation").addEventListener("click", function(e) {
-    validation.show("#manualValidation", "My custom message");
+// document.getElementById("manualValidation").addEventListener("click", function(e) {
+//     validation.show("#manualValidation", "My custom message");
+// });
+
+const eraseButton = document.querySelector('#erase');
+
+eraseButton.addEventListener('click', function (originEvent) {
+    originEvent.preventDefault();
+    
 });
