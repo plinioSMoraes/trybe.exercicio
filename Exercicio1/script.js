@@ -23,7 +23,7 @@ const sortArr = (oddsAndEvens) => {
     //         }
     //     }
     // }
-    oddsAndEvens.sort((a,b) => { return a-b});
+    oddsAndEvens.sort((a,b) => { return a-b}); // Organiza o array de forma crescente
     return `Os números ${oddsAndEvens} se encontram ordenados de forma crescente!`;
 }
 console.log(sortArr(oddsAndEvens)); // será necessário alterar essa linha 😉
