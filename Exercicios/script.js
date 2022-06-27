@@ -113,3 +113,11 @@ const mageMove = (battleMembers, callback) => {
     return mageStats;
 }
 console.log(mageMove(battleMembers, dmg));
+
+// Bonus 2
+const gameActions = {
+    warriorAction: (callback, battleMembers) => {
+        battleMembers.warrior.damage = callback(battleMembers.warrior.strength, '');
+        battleMembers.dragon.healthPoints -= battleMembers.warrior.damage;
+    },
+};
