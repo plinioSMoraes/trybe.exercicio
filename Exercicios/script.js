@@ -30,3 +30,25 @@ const checkTicket = (ticket, callback) => {
 }
 
 // console.log(checkTicket(4, generateNum));
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const questionCheck = (rightAns, studAns, callback) => {
+    const evaluation = callback(rightAns, studAns);
+    return evaluation;
+}
+
+const answerCheck = (RIGHT_ANSWERS, STUDENT_ANSWERS) => {
+    let evaluation = 0;
+    for (let index = 0; index < RIGHT_ANSWERS.length; index += 1) {
+        if (STUDENT_ANSWERS[index] !== "N.A") {
+            if (RIGHT_ANSWERS[index] === STUDENT_ANSWERS[index]) {
+                evaluation += 1;
+            } else {
+                evaluation -= 0.5;
+            }
+        } 
+    }
+    return evaluation
+}
+console.log(questionCheck(RIGHT_ANSWERS, STUDENT_ANSWERS, answerCheck));
