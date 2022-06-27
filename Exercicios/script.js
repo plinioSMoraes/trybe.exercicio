@@ -13,6 +13,20 @@ const employe = (nome) => {
     };
     return employe;
  };
-// console.log(employe("PlinioMoraes").email);
-newEmployees(employe);
-console.log(newEmployees(employe))
+
+// console.log(newEmployees(employe));
+
+const generateNum = () => {
+    return Math.round(Math.random() * (5 - 1) + 1);
+}
+
+const checkTicket = (ticket, callback) => {
+    // if (ticket === callback()) {
+    //     console.log('Parabéns voce ganhou');
+    // } else {
+    //     console.log('Tente novamente');
+    // }
+    return ticket === callback() ? "Parabéns voce ganhou!" : "Tente novamente";
+}
+
+// console.log(checkTicket(4, generateNum));
