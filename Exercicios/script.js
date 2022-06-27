@@ -55,13 +55,61 @@ const answerCheck = (RIGHT_ANSWERS, STUDENT_ANSWERS) => {
 }
 // console.log(questionCheck(RIGHT_ANSWERS, STUDENT_ANSWERS, answerCheck));
 
-//Bonus
+//Bonus - 1
+const mage = {
+    healthPoints: 130,
+    intelligence: 45,
+    mana: 125,
+    damage: undefined,
+  };
+  
+  const warrior = {
+    healthPoints: 200,
+    strength: 30,
+    weaponDmg: 2,
+    damage: undefined,
+  };
+  
+  const dragon = {
+    healthPoints: 350,
+    strength: 50,
+    damage: undefined,
+  };
+  
+const battleMembers = { mage, warrior, dragon };
+// console.log(battleMembers.dragon.strength)
+const dmg = (strength, intelligence) => {
+    if (intelligence === ''){
+      return Math.round(Math.random() * (strength - 15) + 15);
+    }
+    if (strength === '') {
+      return Math.round(Math.random() * (intelligence*2 - intelligence) + intelligence);
+    }
+}
+const dragonDmg = (battleMembers, callback) => {
+    dragon.damage = callback(battleMembers.dragon.strength);
+    return `The mighty dragon hit you for ${dragon.damage} points of health!!`;
+}
+// console.log(dragonDmg(battleMembers, dmg));
+const warriorDmg = (battleMembers, callback) => {
+    warrior.damage = callback(battleMembers.warrior.strength);
+    return `The mighty Warrior hit you for ${warrior.damage} points of health!`;
+}
+// console.log(warriorDmg(battleMembers, dmg));
 
-const dmg = (strenght) => {
-    return Math.round(Math.random() * (strenght - 15) + 15);
+const mageMove = (battleMembers, callback) => {
+    const mageStats = {
+        dano: battleMembers.mage.damage,
+        mana: battleMembers.mage.mana,
+    }
+    mageStats.dano = callback('',battleMembers.mage.intelligence);
+    
+    if (mageStats.mana < 15) {
+      mageStats.dano = 'Not enough mana!';
+    } else {
+      mageStats.dano = callback('',battleMembers.mage.intelligence);
+      mageStats.mana -= 15;
+    }
+    return mageStats;
 }
-const dragonDmg = (strenght, callback) => {
-    const dragonDmg = callback(strenght);
-    return `The mighty dragon hit you for ${dragonDmg} points of health!!`;
-}
-console.log(dragonDmg(33, dmg));
+console.log(mageMove(battleMembers, dmg));
