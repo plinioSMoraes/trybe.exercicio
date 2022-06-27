@@ -1,3 +1,4 @@
+//Exercicio 1
 const newEmployees = (callback) => {
     const employees = {
       id1: callback("Pedro Guerra"), // Nome: Pedro Guerra -> Chame sua função passando o nome Pedro Guerra como parâmetro, substituindo as aspas
@@ -13,9 +14,9 @@ const employe = (nome) => {
     };
     return employe;
  };
-
 // console.log(newEmployees(employe));
 
+//Exercicio 2
 const generateNum = () => {
     return Math.round(Math.random() * (5 - 1) + 1);
 }
@@ -28,8 +29,9 @@ const checkTicket = (ticket, callback) => {
     // }
     return ticket === callback() ? "Parabéns voce ganhou!" : "Tente novamente";
 }
-
 // console.log(checkTicket(4, generateNum));
+
+// Exercicio 3
 const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
 const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
 
@@ -51,4 +53,15 @@ const answerCheck = (RIGHT_ANSWERS, STUDENT_ANSWERS) => {
     }
     return evaluation
 }
-console.log(questionCheck(RIGHT_ANSWERS, STUDENT_ANSWERS, answerCheck));
+// console.log(questionCheck(RIGHT_ANSWERS, STUDENT_ANSWERS, answerCheck));
+
+//Bonus
+
+const dmg = (strenght) => {
+    return Math.round(Math.random() * (strenght - 15) + 15);
+}
+const dragonDmg = (strenght, callback) => {
+    const dragonDmg = callback(strenght);
+    return `The mighty dragon hit you for ${dragonDmg} points of health!!`;
+}
+console.log(dragonDmg(33, dmg));
